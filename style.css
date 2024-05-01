@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    background-color: #000; /* Black background color */
+    display: grid;
+    place-items: center; /* Centering content */
+    overflow: hidden; /* Hiding overflowing content */
+}
+
+span {
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none; /* Ignoring pointer events on spans */
+    background-image: url("heart-26-1.png"); /* Heart image as background */
+    background-size: cover; /* Covering the entire element with the background image */
+    width: 100px; /* Initial width of the hearts */
+    height: 100px; /* Initial height of the hearts */
+    animation: animate 100s ease-in; /* Applying the animation to the spans */
+}
+
+@keyframes animate {
+    0%{
+        transform: translate(-50% ,-50%); /* Initial position */
+        opacity: 0.7; /* Initial opacity */
+        filter: hue-rotate(0deg); /* Initial color */
+    }
+    10%{
+        transform: translate(-50% ,-5000%); /* Moving upwards */
+        filter: hue-rotate(-270deg); /* Changing color */
+        opacity: 0.5; /* Lowering opacity */
+    }
+    100%{
+        transform: translate(-50% ,-50000%); /* Moving far upwards */
+        opacity: 0; /* Fading out */
+        filter: hue-rotate(0deg); /* Resetting color */
+    }
+}
